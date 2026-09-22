@@ -1,0 +1,15 @@
+{
+  "type": "ebook",
+  "name": "Harbor Arabic Turath Sources",
+  "plugins": [
+    {
+      "id": "turath-arabic",
+      "name": "Turath Arabic Books",
+      "version": "1.0.0",
+      "lang": "ar",
+      "nsfw": false,
+      "icon": "https://app.turath.io/favicon.ico",
+      "entry": "turath.plugin.js"
+    }
+  ]
+}
