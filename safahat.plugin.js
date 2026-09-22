@@ -67,8 +67,15 @@ function bookIdFromHref(href) {
 }
 
 function chapterPathFromHref(href, id) {
-  const m = String(href || "").match(new RegExp("^/books/" + id.replace(/[-/\\^$*+?.()|[\\]{}]/g, "\\$&") + "/([^/?#]+)/?$"));
-  return m ? "/books/" + id + "/" + m[1] + "/" : null;
+  const value = String(href || "");
+  const prefix = "/books/" + id + "/";
+  if (!value.startsWith(prefix)) return null;
+
+  let tail = value.slice(prefix.length).split(/[?#]/)[0];
+  tail = tail.replace(/^\\/+/, "").replace(/\\/+$/, "");
+  if (!tail || tail.includes("/")) return null;
+
+  return prefix + tail + "/";
 }
 
 function extractBookSummary(link) {
