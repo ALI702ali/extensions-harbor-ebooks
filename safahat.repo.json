@@ -1,0 +1,14 @@
+{
+  "type": "ebook",
+  "name": "Safahat Arabic Books",
+  "plugins": [
+    {
+      "id": "safahat-arabic",
+      "name": "Safahat Arabic Books",
+      "version": "1.0.1",
+      "lang": "ar",
+      "nsfw": false,
+      "entry": "safahat.plugin.js"
+    }
+  ]
+}
